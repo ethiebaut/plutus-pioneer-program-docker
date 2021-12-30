@@ -32,6 +32,9 @@ docker build -t plutus-dev .
 ```
 
 ### Trick in building the image
+The``cabal build``command is run twice as it fails the first time due to missing apt dependencies.
+However, the apt dependencies cannot be installed before the first build, otherwise the build fails to start.
+Therefore, the build is performed a first time, its exit code ignored, then the apt dependencies are installed, and the build is run a second time.
 
 ### Acknowledgement / Source
 Original Docker file can be downloaded from https://learning.lokdao.io/plutus-pioneer-program/week-1/setting-up-the-environment.
