@@ -17,7 +17,7 @@ After the image has been pulled, wait for about 30 seconds or so for all process
 
 All embedded demo examples should work.
 
-You can also run the English Auction Plutus Pioneer Program with [this commit](https://github.com/input-output-hk/plutus-pioneer-program/blob/71142569d0a2732e738fe75dd002a04f995533ef/code/week01/src/Week01/EnglishAuction.hs).
+You can also run the English Auction Plutus Pioneer Program with [this commit](https://github.com/input-output-hk/plutus-pioneer-program/blob/71142569d0a2732e738fe75dd002a04f995533ef/code/week01/src/Week01/EnglishAuction.hs) (don't forget to delete lines 18-30).
 
 ## To rebuild the image
 In order to rebuild the docker image please note:
