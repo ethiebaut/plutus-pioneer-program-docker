@@ -16,7 +16,7 @@ ENV USERNAME=pioneer \
 
 # 3. Update image and install pre-req packages
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends sed curl gcc git make sudo vim xz-utils libtinfo5 libgmp-dev zlib1g-dev procps lsb-release ca-certificates build-essential libffi-dev libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 libicu-dev libncurses-dev z3
+    apt-get install -y --no-install-recommends sed curl gcc git make sudo vim xz-utils libtinfo5 libgmp-dev zlib1g-dev procps lsb-release ca-certificates build-essential libffi-dev libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 libicu-dev libncurses-dev z3 libsodium-dev
 
 # 4. Create dev user
 RUN groupadd --gid $USER_GID $USERNAME && \
@@ -66,7 +66,11 @@ RUN cd /home/${USERNAME} && \
 
 # 1b. Set local Plutus repo to a specific commit version
 RUN cd /home/${USERNAME}/plutus && \
-    git checkout 3746610e53654a1167aeb4c6294c6096d16b0502
+    git checkout 3aa86304e9bfc425667051a8a94db73fcdc38878
+
+# 1c. Set local Plutus Pioneer Program to a commit version
+RUN cd /home/${USERNAME}/plutus-pioneer-program && \
+    git checkout ba0f4f3173c05b23411ed718e2bd9ff8e4fd3484
 
 # 2. Edit webpack.config.js to allow access to playground client from outside of container
 RUN cd /home/${USERNAME}/plutus/plutus-playground-client &&\
@@ -104,10 +108,8 @@ RUN cd /home/${USERNAME}/plutus/ && \
 # Build
 #######################
 
-# 1. Build the environment
+# 1. Build the environment for week 1
 RUN cd /home/${USERNAME}/plutus-pioneer-program/code/week01 && \
-    cabal build || true && \
-    sudo apt install -y pkg-config libsodium-dev && \
     cabal build
 
 #######################
