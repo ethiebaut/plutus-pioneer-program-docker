@@ -16,9 +16,9 @@ This corresponds to the [updated](https://github.com/input-output-hk/plutus-pion
 
 Docker images are available for the following version numbers:
 
-| Plutus | Plutus Pioneer Program | Comment |
+| Plutus | Plutus Pioneer Program | Notes |
 |--------|------------------------|---------|
-| 3746610 | ba0f4f3 | First Cohort - [week 1](https://github.com/input-output-hk/plutus-pioneer-program/blob/71142569d0a2732e738fe75dd002a04f995533ef/code/week01/src/Week01/EnglishAuction.hs) & week 2<br/>_(Don't forget to delete the module statement for both weeks)_|
+| 3746610 | ba0f4f3 | First Cohort - [week 1](https://github.com/input-output-hk/plutus-pioneer-program/blob/71142569d0a2732e738fe75dd002a04f995533ef/code/week01/src/Week01/EnglishAuction.hs) & week 2.<br/>_* Don't forget to delete the module statement in all files for both weeks_<br/>_* You'll need to replace ScriptContext by ValidatorCtx in some files_|
 | 3aa8630 | ba0f4f3 | First Cohort - weeks 3- |
 
 
