@@ -28,16 +28,17 @@ All embedded demo examples should work.
 
 You can also run the English Auction Plutus Pioneer Program with [this commit](https://github.com/input-output-hk/plutus-pioneer-program/blob/71142569d0a2732e738fe75dd002a04f995533ef/code/week01/src/Week01/EnglishAuction.hs) (don't forget to delete lines 18-30 if using Plutus 3746610).
 
-## To rebuild the image
-In order to rebuild the docker image please note:
+## To rebuild the images
+In order to rebuild the docker images please note:
 * It will take about 30 minutes to an hour
 * It may not work if some dependencies have been updated
 * You need to have 6GB RAM free in your Docker environment, otherwise the build will fail with error 137
-* You need about 48GB of free disk space in your Docker environment, otherwise the build will fail with various "disk full" issues
+* You need about 48GB of free disk space in your Docker environment __per image__, otherwise the build will fail with various "disk full" issues (best to clear your docker environment before building each image)
 
 Just run:
 ```shell
-docker build -t plutus-dev .
+docker build -f Dockerfile-3746610-ba0f4f3 -t ethiebaut/plutus-dev:3746610-ba0f4f3 .
+docker build -f Dockerfile-3aa8630-ba0f4f3 -t ethiebaut/plutus-dev:3aa8630-ba0f4f3 .
 ```
 
 ### Acknowledgement / Source
